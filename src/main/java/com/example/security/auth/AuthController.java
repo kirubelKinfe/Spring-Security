@@ -4,6 +4,7 @@ import com.example.security.config.JwtService;
 import com.example.security.token.TokenRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,13 +22,13 @@ public class AuthController {
 
     @PostMapping("/register")
     public ResponseEntity<AuthResponse> register (
-        @RequestBody RegisterRequest request
+        @RequestBody @Valid RegisterRequest request
     )  {
         return ResponseEntity.ok(service.register(request));
     }
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login (
-            @RequestBody LoginRequest request
+            @RequestBody @Valid LoginRequest request
     )  {
         return ResponseEntity.ok(service.login(request));
     }
