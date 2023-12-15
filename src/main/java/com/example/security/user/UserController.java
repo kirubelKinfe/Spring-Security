@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
@@ -40,7 +41,7 @@ public class UserController {
             }
     )
     @GetMapping(path = "/users")
-    public ResponseEntity<String> getUsers ()   {
-        return ResponseEntity.ok("Hello World");
+    public ResponseEntity<List<User>> getUsers ()   {
+        return ResponseEntity.ok(service.getUsers());
     }
 }

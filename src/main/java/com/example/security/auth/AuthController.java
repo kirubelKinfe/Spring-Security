@@ -1,7 +1,5 @@
 package com.example.security.auth;
 
-import com.example.security.config.JwtService;
-import com.example.security.token.TokenRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
